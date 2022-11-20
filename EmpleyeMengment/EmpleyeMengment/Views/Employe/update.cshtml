@@ -1,0 +1,33 @@
+﻿@model UpdateViewModel
+
+<form method="POST" asp-route="employe-update">
+    <div class="form-group">
+        <input asp-for="EmployesCode" type="hidden" class="form-control" id="exampleInputEmail1" readonly>
+    </div>
+    <div class="form-group">
+        <label asp-for="Name"></label>
+        <input asp-for="Name" class="form-control" id="exampleInputEmail1">
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Surname"></label>
+        <input asp-for="Surname" class="form-control" id="exampleInputEmail1">
+        <span asp-validation-for="Surname" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="FatherName"></label>
+        <input asp-for="FatherName" class="form-control" id="exampleInputEmail1">
+        <span asp-validation-for="FatherName" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="FinCode"></label>
+        <input asp-for="FinCode" class="form-control" id="exampleInputEmail1">
+        <span asp-validation-for="FinCode" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Email"></label>
+        <input asp-for="Email" class="form-control" id="exampleInputEmail1">
+        <span asp-validation-for="Email" class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
