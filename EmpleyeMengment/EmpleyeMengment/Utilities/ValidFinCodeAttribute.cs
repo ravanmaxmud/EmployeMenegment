@@ -10,7 +10,7 @@ namespace EmpleyeMengment.Utilities
         {
             string finCode = value.ToString();
 
-            if (Regex.IsMatch(finCode,@"[A-Z0-9]{7,}")) 
+            if (Regex.IsMatch(finCode,@"^[A-Z0-9]{7}$")) 
             {
                 return ValidationResult.Success;
             }
