@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using EmpleyeMengment.DataBase;
+using System.ComponentModel.DataAnnotations;
 using System.Text.RegularExpressions;
 
 namespace EmpleyeMengment.Utilities
@@ -8,6 +9,7 @@ namespace EmpleyeMengment.Utilities
 
         protected override ValidationResult IsValid(object? value,ValidationContext validationContext)
         {
+            using DataContext dbContexts = new DataContext();
             string finCode = value.ToString();
 
             if (Regex.IsMatch(finCode,@"^[A-Z0-9]{7}$")) 

@@ -14,7 +14,9 @@ namespace EmpleyeMengment.Controllers
 
 
         #region list
+        [Route("")]
         [HttpGet("Index", Name = "employe-list")]
+        [Route("~/")]
         public IActionResult Index()
         {   
             using DataContext dbContexts = new DataContext();
@@ -31,8 +33,8 @@ namespace EmpleyeMengment.Controllers
 
 
         #region add
-
         [HttpGet("Add", Name ="employe-add")]
+      
         public IActionResult Add()
         {
             return View();
