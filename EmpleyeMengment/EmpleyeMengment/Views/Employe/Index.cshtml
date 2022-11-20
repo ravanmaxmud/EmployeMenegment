@@ -1,0 +1,46 @@
+﻿@model List<IndexViewModel>
+
+
+<form method="get" asp-controller="employe" asp-action="index">
+    <table class="table">
+        <div>
+            <a class="btn btn-primary" asp-controller="employe" asp-action="add">Add New Employe</a>
+        </div>
+        <thead>
+            <tr>
+                <th scope="col">EmployeCode</th>
+                <th scope="col">Name</th>
+                <th scope="col">Surname</th>
+                <th scope="col">FatherName</th>
+                <th scope="col">Email</th>
+                <th scope="col">FinCode</th>
+                <th scope="col">IsDeleted</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var employe in Model)
+            {
+                if (employe.IsDeleted == false)
+                {
+                    <tr>
+                        <td>@employe.EmployesCode</td>
+                        <td>@employe.Name</td>
+                        <td>@employe.Surname</td>
+                        <td>@employe.FatherName</td>
+                        <td>@employe.Email</td>
+                        <td>@employe.FinCode</td>
+                        <td>@employe.IsDeleted</td>
+                        <td>
+                            <div>
+                                <a class="btn btn-primary col-5" asp-route="employe-soft-del" asp-route-employecode="@employe.EmployesCode">Remove Employe</a>
+                                <a class="btn btn-success col-5" asp-route="employe-update-code" asp-route-employecode="@employe.EmployesCode">Update Employe</a>
+                            </div>
+                        </td>
+                    </tr>
+                }
+            }
+
+        </tbody>
+    </table>
+
+</form>
