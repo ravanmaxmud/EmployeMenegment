@@ -32,7 +32,7 @@ namespace EmpleyeMengment.Utilities
                             {
                                 newCode = "E" + _random.Next(10000, 100000);
 
-                            } while (employe.EmployesCode != newCode);
+                            } while (employe.EmployesCode == newCode);
                         }
                         lastCode++;
 
