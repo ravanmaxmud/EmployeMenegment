@@ -24,7 +24,7 @@ namespace EmpleyeMengment.Controllers
 
             
             var employes =
-                dbContexts.Employes.
+                dbContexts.Employes.Where(e => e.IsDeleted == false).
                 Select(e => new IndexViewModel
                 (e.EmployesCode, e.Name, e.Surname, e.FatherName, e.FinCode, e.Email, e.IsDeleted)).ToList();
             return View(employes);

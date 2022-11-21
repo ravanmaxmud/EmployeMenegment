@@ -20,24 +20,21 @@
         <tbody>
             @foreach (var employe in Model)
             {
-                if (employe.IsDeleted == false)
-                {
-                    <tr>
-                        <td>@employe.EmployesCode</td>
-                        <td>@employe.Name</td>
-                        <td>@employe.Surname</td>
-                        <td>@employe.FatherName</td>
-                        <td>@employe.Email</td>
-                        <td>@employe.FinCode</td>
-                        <td>@employe.IsDeleted</td>
-                        <td>
-                            <div>
-                                <a class="btn btn-primary col-5" asp-route="employe-soft-del" asp-route-employecode="@employe.EmployesCode">Remove Employe</a>
-                                <a class="btn btn-success col-5" asp-route="employe-update-code" asp-route-employecode="@employe.EmployesCode">Update Employe</a>
-                            </div>
-                        </td>
-                    </tr>
-                }
+                <tr>
+                    <td>@employe.EmployesCode</td>
+                    <td>@employe.Name</td>
+                    <td>@employe.Surname</td>
+                    <td>@employe.FatherName</td>
+                    <td>@employe.Email</td>
+                    <td>@employe.FinCode</td>
+                    <td>@employe.IsDeleted</td>
+                    <td>
+                        <div>
+                            <a class="btn btn-primary col-5" asp-route="employe-soft-del" asp-route-employecode="@employe.EmployesCode">Remove Employe</a>
+                            <a class="btn btn-success col-5" asp-route="employe-update-code" asp-route-employecode="@employe.EmployesCode">Update Employe</a>
+                        </div>
+                    </td>
+                </tr>
             }
 
         </tbody>
