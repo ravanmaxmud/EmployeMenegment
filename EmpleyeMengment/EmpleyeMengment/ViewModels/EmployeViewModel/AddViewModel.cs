@@ -1,4 +1,4 @@
-﻿using EmpleyeMengment.Utilities;
+﻿using EmpleyeMengment.Attributes;
 using System.ComponentModel.DataAnnotations;
 
 namespace EmpleyeMengment.ViewModels.EmployeViewModel

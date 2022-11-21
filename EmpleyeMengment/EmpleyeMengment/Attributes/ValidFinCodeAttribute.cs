@@ -2,17 +2,17 @@
 using System.ComponentModel.DataAnnotations;
 using System.Text.RegularExpressions;
 
-namespace EmpleyeMengment.Utilities
+namespace EmpleyeMengment.Attributes
 {
     public class ValidFinCodeAttribute : ValidationAttribute
     {
 
-        protected override ValidationResult IsValid(object? value,ValidationContext validationContext)
+        protected override ValidationResult IsValid(object? value, ValidationContext validationContext)
         {
             using DataContext dbContexts = new DataContext();
             string finCode = value.ToString();
 
-            if (Regex.IsMatch(finCode,@"^[A-Z0-9]{7}$")) 
+            if (Regex.IsMatch(finCode, @"^[A-Z0-9]{7}$"))
             {
                 return ValidationResult.Success;
             }
